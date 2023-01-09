@@ -1,0 +1,138 @@
+[
+  {
+    "text": "pepperoni",
+    "intent": "item_start_generic",
+    "intent_prediction": {
+      "name": "item_topping",
+      "confidence": 0.5730842351913452
+    }
+  },
+  {
+    "text": "large",
+    "intent": "item_start_generic",
+    "intent_prediction": {
+      "name": "item_size",
+      "confidence": 0.5027387142181396
+    }
+  },
+  {
+    "text": "5",
+    "intent": "item_amount",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "small",
+    "intent": "init_request",
+    "intent_prediction": {
+      "name": "item_start_generic",
+      "confidence": 0.4103166460990906
+    }
+  },
+  {
+    "text": "1",
+    "intent": "item_amount",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "medium",
+    "intent": "item_size",
+    "intent_prediction": {
+      "name": "item_start_generic",
+      "confidence": 0.5403463244438171
+    }
+  },
+  {
+    "text": "small",
+    "intent": "item_size",
+    "intent_prediction": {
+      "name": "item_start_generic",
+      "confidence": 0.4103166460990906
+    }
+  },
+  {
+    "text": "2",
+    "intent": "item_start_generic",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "do you have hawaii",
+    "intent": "item_type_start_positive",
+    "intent_prediction": {
+      "name": "pizza_questions",
+      "confidence": 0.5150024890899658
+    }
+  },
+  {
+    "text": "3",
+    "intent": "item_amount",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "2",
+    "intent": "item_amount",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "my name is Raymond",
+    "intent": "give_name",
+    "intent_prediction": {
+      "name": "client_name",
+      "confidence": 0.5974485278129578
+    }
+  },
+  {
+    "text": "my phone is 55555555",
+    "intent": "give_phone",
+    "intent_prediction": {
+      "name": "give_name",
+      "confidence": 0.7432267069816589
+    }
+  },
+  {
+    "text": "098765432",
+    "intent": "give_phone",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "do you offer pizza margherita",
+    "intent": "pizza_questions",
+    "intent_prediction": {
+      "name": "item_type_start_positive",
+      "confidence": 0.6370155811309814
+    }
+  },
+  {
+    "text": "0",
+    "intent": "give_rating",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.6405608057975769
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "accept_feedback",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.7814444899559021
+    }
+  }
+]

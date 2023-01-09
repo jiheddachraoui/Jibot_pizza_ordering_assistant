@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasa Core Visualisation</title>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+</head>
+<body>
+<div id="errormsg" style="color: #b00"></div>
+<svg>
+    <style id="graph-style">
+        .node.invisible > rect {
+            display: none;
+        }
+
+        .node.start > rect {
+            fill: #7f7;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node.end > rect {
+            fill: #f77;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node:not(.active) > rect, .node:not(.active) > .label {
+            opacity: 0.4;
+        }
+
+        .edgePath:not(.active) path {
+            opacity: 0.4;
+        }
+
+        .node.ellipsis > rect {
+            fill: #CCC;
+        }
+
+        .node.intent > rect {
+            fill: #7ff;
+        }
+
+        .node.dashed > rect {
+            stroke-dasharray: 5;
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf, serif;
+            font-size: 14px;
+            color: #1f1d1d;
+        }
+
+        .node rect {
+            stroke: #444;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        svg {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+    <g></g>
+</svg>
+<script>
+
+  function serveGraph() {
+    let oldInputGraphValue;
+
+    const url = 'visualization.dot';
+    const refreshInterval = 500;
+
+    // trigger a refresh by fetching an updated graph
+    setInterval(function () {
+      fetch(url).then(r => r.text()).then(dot => {
+        document.getElementById('errormsg').innerHTML = '';
+        if (oldInputGraphValue === dot) return;
+
+        oldInputGraphValue = dot;
+        drawGraph(dot);
+      }).catch(err => {
+        document.getElementById('errormsg').innerHTML =
+          'Failed to update plot. (' + err.message + ')';
+      });
+    }, refreshInterval);
+  }
+
+  function drawGraph(graph) {
+    let g = graphlibDot.read(graph);
+    // Set margins, if not present
+    if (!g.graph().hasOwnProperty("marginx") &&
+      !g.graph().hasOwnProperty("marginy")) {
+      g.graph().marginx = 20;
+      g.graph().marginy = 20;
+    }
+    g.graph().transition = function (selection) {
+      return selection.transition().duration(300);
+    };
+    // Render the graph into svg g
+    d3.select("svg g").call(render, g);
+  }
+  // Set up zoom support
+  const svg = d3.select("svg"),
+    inner = d3.select("svg g"),
+    zoom = d3.zoom().on("zoom", function () {
+      inner.attr("transform", d3.event.transform);
+    });
+  svg.call(zoom);
+
+  // Create and configure the renderer
+  const render = dagreD3.render();
+
+  let isClient = false;
+  isClient = true;
+
+  if (isClient) {
+    // Mark all nodes and their edges as active
+    cssRules = document.getElementById('graph-style').sheet.cssRules;
+    cssRules[3].style.opacity = 1;
+    cssRules[4].style.opacity = 1;
+
+    let graph;
+    graph = `digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_welcome_greet];
+2 [class="", fontsize=12, label=pizza_order_form];
+3 [class="", fontsize=12, label=utter_summarize_order];
+4 [class="", fontsize=12, label=person_form];
+5 [class="", fontsize=12, label=action_order_number];
+6 [class="", fontsize=12, label=utter_total_order_final];
+7 [class="", fontsize=12, label=utter_order_complete];
+8 [class="", fontsize=12, label=utter_feedback];
+9 [class="", fontsize=12, label=feedback_form];
+19 [class="", fontsize=12, label=utter_thank_user];
+38 [class="", fontsize=12, label=action_save_feedback];
+39 [class="", fontsize=12, label=utter_thank_user];
+40 [class="", fontsize=12, label=action_end_conversation];
+43 [class="", fontsize=12, label=utter_item_type_start_negative];
+44 [class="", fontsize=12, label=pizza_order_form];
+45 [class="", fontsize=12, label=utter_summarize_order];
+46 [class="", fontsize=12, label=action_change_order];
+47 [class="", fontsize=12, label=utter_item_change];
+48 [class="", fontsize=12, label=action_reset_pizza_form];
+49 [class="", fontsize=12, label=utter_order_add];
+61 [class="", fontsize=12, label=utter_item_type];
+62 [class="", fontsize=12, label=person_form];
+68 [class="", fontsize=12, label=utter_init_request];
+69 [class="", fontsize=12, label=pizza_order_form];
+76 [class="", fontsize=12, label=utter_init_pizza_question];
+138 [class="", fontsize=12, label=utter_order_confirm_negative];
+4179 [class="", fontsize=12, label="..."];
+4180 [class="", fontsize=12, label=utter_item_type_start_negative];
+4182 [class="", fontsize=12, label=utter_item_type_start_positive];
+4184 [class="", fontsize=12, label=pizza_order_form];
+4189 [class="", fontsize=12, label=person_form];
+4195 [class="", fontsize=12, label=feedback_form];
+4197 [class="", fontsize=12, label=feedback_form];
+4202 [class="", fontsize=12, label=utter_out_of_scope];
+4204 [class="", fontsize=12, label=utter_welcome_greet];
+4206 [class="", fontsize=12, label=utter_init_request];
+4207 [class=intent, fillcolor=lightblue, label="hello hi", shape=rect, style=filled];
+4208 [class=intent, fillcolor=lightblue, label="Can I change the toppings on my pizza?", shape=rect, style=filled];
+4209 [class=intent, fillcolor=lightblue, label="one Funghi small pizza", shape=rect, style=filled];
+4210 [class=intent, fillcolor=lightblue, label="small pizza with tomatoes topping", shape=rect, style=filled];
+4211 [class=intent, fillcolor=lightblue, label="pizza with no cheese?", shape=rect, style=filled];
+4212 [class=intent, fillcolor=lightblue, label="do you offer pizza kabeb", shape=rect, style=filled];
+4213 [class=intent, fillcolor=lightblue, label="yeah all is good", shape=rect, style=filled];
+4214 [class=intent, fillcolor=lightblue, label="delivery please", shape=rect, style=filled];
+4215 [class=intent, fillcolor=lightblue, label="take away", shape=rect, style=filled];
+4216 [class=intent, fillcolor=lightblue, label=thanks, shape=rect, style=filled];
+4217 [class=intent, fillcolor=lightblue, label=begin, shape=rect, style=filled];
+4218 [class=intent, fillcolor=lightblue, label=non, shape=rect, style=filled];
+4219 [class=intent, fillcolor=lightblue, label=nope, shape=rect, style=filled];
+4220 [class=intent, fillcolor=lightblue, label="very satisfied", shape=rect, style=filled];
+4221 [class=intent, fillcolor=lightblue, label="actually, i would like a small vegetarian.", shape=rect, style=filled];
+4222 [class=intent, fillcolor=lightblue, label=Noo, shape=rect, style=filled];
+4223 [class=intent, fillcolor=lightblue, label="that's all", shape=rect, style=filled];
+4224 [class=intent, fillcolor=lightblue, label="Funghi pizza", shape=rect, style=filled];
+4225 [class=intent, fillcolor=lightblue, label=small, shape=rect, style=filled];
+4226 [class=intent, fillcolor=lightblue, label="yeah all is good", shape=rect, style=filled];
+4227 [class=intent, fillcolor=lightblue, label="actually , i 'd like small pizza.", shape=rect, style=filled];
+4228 [class=intent, fillcolor=lightblue, label="no thank you", shape=rect, style=filled];
+4229 [class=intent, fillcolor=lightblue, label="i prefer delivery", shape=rect, style=filled];
+4230 [class=intent, fillcolor=lightblue, label="take away", shape=rect, style=filled];
+4231 [class=intent, fillcolor=lightblue, label="one Margherita medium pizza", shape=rect, style=filled];
+4232 [class=intent, fillcolor=lightblue, label=yes, shape=rect, style=filled];
+4233 [class=intent, fillcolor=lightblue, label="actually no", shape=rect, style=filled];
+4234 [class=intent, fillcolor=lightblue, label="actually, i would like a small vegetarian.", shape=rect, style=filled];
+4235 [class=intent, fillcolor=lightblue, label="I want a medium cheese pizza", shape=rect, style=filled];
+4236 [class=intent, fillcolor=lightblue, label="I'd like in medium size instead", shape=rect, style=filled];
+4237 [class=intent, fillcolor=lightblue, label="do you have pizza kabeb?", shape=rect, style=filled];
+4238 [class=intent, fillcolor=lightblue, label="do you offer pizza vegetarian", shape=rect, style=filled];
+4239 [class=intent, fillcolor=lightblue, label="Hawaii pizza large  9", shape=rect, style=filled];
+4240 [class=intent, fillcolor=lightblue, label=Yes, shape=rect, style=filled];
+4241 [class=intent, fillcolor=lightblue, label=pleasure, shape=rect, style=filled];
+4242 [class=intent, fillcolor=lightblue, label="give me the directions to time square", shape=rect, style=filled];
+4243 [class=intent, fillcolor=lightblue, label=bonjour, shape=rect, style=filled];
+4244 [class=intent, fillcolor=lightblue, label="pepperoni small pizza", shape=rect, style=filled];
+0 -> 4179  [class="", key=NONE, label=""];
+0 -> 4207  [class="", key=0];
+0 -> 4208  [class="", key=0];
+1 -> 4209  [class="", key=0];
+1 -> 4210  [class="", key=0];
+1 -> 4211  [class="", key=0];
+2 -> 3  [class="", key=NONE, label=""];
+2 -> 4212  [class="", key=0];
+3 -> 4213  [class="", key=0];
+4 -> 5  [class="", key=NONE, label=""];
+5 -> 6  [class="", key=NONE, label=""];
+6 -> "-1"  [class="", key=NONE, label=""];
+6 -> 4214  [class="", key=0];
+6 -> 4215  [class="", key=0];
+7 -> 4216  [class="", key=0];
+8 -> 4217  [class="", key=0];
+8 -> 4218  [class="", key=0];
+8 -> 4219  [class="", key=0];
+9 -> "-1"  [class="", key=NONE, label=""];
+9 -> 38  [class="", key=NONE, label=""];
+9 -> 4220  [class="", key=0];
+19 -> "-1"  [class="", key=NONE, label=""];
+38 -> 39  [class="", key=NONE, label=""];
+39 -> 40  [class="", key=NONE, label=""];
+40 -> "-1"  [class="", key=NONE, label=""];
+43 -> 44  [class="", key=NONE, label=""];
+44 -> 45  [class="", key=NONE, label=""];
+44 -> 3  [class="", key=NONE, label=""];
+45 -> "-1"  [class="", key=NONE, label=""];
+45 -> 4221  [class="", key=0];
+46 -> 47  [class="", key=NONE, label=""];
+47 -> 4222  [class="", key=0];
+47 -> 4223  [class="", key=0];
+48 -> 49  [class="", key=NONE, label=""];
+49 -> 4224  [class="", key=0];
+49 -> 4225  [class="", key=0];
+61 -> 4226  [class="", key=0];
+61 -> 4227  [class="", key=0];
+61 -> 4228  [class="", key=0];
+62 -> 4229  [class="", key=0];
+62 -> 4230  [class="", key=0];
+68 -> 4231  [class="", key=0];
+69 -> 4232  [class="", key=0];
+69 -> 4233  [class="", key=0];
+69 -> 4234  [class="", key=0];
+76 -> 4235  [class="", key=0];
+138 -> 4236  [class="", key=0];
+4179 -> 44  [class="", key=NONE, label=""];
+4179 -> 4  [class="", key=NONE, label=""];
+4179 -> 4197  [class="", key=NONE, label=""];
+4179 -> 4237  [class="", key=0];
+4179 -> 4238  [class="", key=0];
+4179 -> 4239  [class="", key=0];
+4179 -> 4240  [class="", key=0];
+4179 -> 4241  [class="", key=0];
+4179 -> 4242  [class="", key=0];
+4179 -> 4243  [class="", key=0];
+4179 -> 4244  [class="", key=0];
+4180 -> "-1"  [class="", key=NONE, label=""];
+4182 -> "-1"  [class="", key=NONE, label=""];
+4184 -> "-1"  [class="", key=NONE, label=""];
+4189 -> "-1"  [class="", key=NONE, label=""];
+4195 -> "-1"  [class="", key=NONE, label=""];
+4197 -> 38  [class="", key=NONE, label=""];
+4202 -> "-1"  [class="", key=NONE, label=""];
+4204 -> "-1"  [class="", key=NONE, label=""];
+4206 -> "-1"  [class="", key=NONE, label=""];
+4207 -> 1  [class="", key=0];
+4208 -> 61  [class="", key=0];
+4209 -> 2  [class="", key=0];
+4210 -> 68  [class="", key=0];
+4211 -> 76  [class="", key=0];
+4212 -> 43  [class="", key=0];
+4213 -> 4  [class="", key=0];
+4214 -> 7  [class="", key=0];
+4215 -> 7  [class="", key=0];
+4216 -> 8  [class="", key=0];
+4217 -> 9  [class="", key=0];
+4218 -> 19  [class="", key=0];
+4219 -> 39  [class="", key=0];
+4220 -> 19  [class="", key=0];
+4221 -> 46  [class="", key=0];
+4222 -> 48  [class="", key=0];
+4223 -> 62  [class="", key=0];
+4224 -> 44  [class="", key=0];
+4225 -> 69  [class="", key=0];
+4226 -> 62  [class="", key=0];
+4227 -> 46  [class="", key=0];
+4228 -> 138  [class="", key=0];
+4229 -> 7  [class="", key=0];
+4230 -> 7  [class="", key=0];
+4231 -> 69  [class="", key=0];
+4232 -> 62  [class="", key=0];
+4233 -> 138  [class="", key=0];
+4234 -> 46  [class="", key=0];
+4235 -> 68  [class="", key=0];
+4236 -> 46  [class="", key=0];
+4237 -> 4180  [class="", key=0];
+4238 -> 4182  [class="", key=0];
+4239 -> 4184  [class="", key=0];
+4240 -> 4189  [class="", key=0];
+4241 -> 4195  [class="", key=0];
+4242 -> 4202  [class="", key=0];
+4243 -> 4204  [class="", key=0];
+4244 -> 4206  [class="", key=0];
+}
+`;
+    drawGraph(graph);
+  } else {
+    serveGraph();
+  }
+
+
+</script>
+</body>
+</html>

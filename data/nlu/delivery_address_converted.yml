@@ -1,0 +1,167 @@
+version: "3.1"
+nlu:
+- lookup: delivery_address
+  examples: |
+    - Via Giuseppe Verdi, 14 - 20122 Milano MI
+    - Via del Corso, 456 - 00186 Roma RM
+    - Via Napoli, 60 - 80142 Napoli NA
+    - Via Roma, 12 - 16123 Genova GE
+    - Via Vittorio Emanuele II, 123 - 00185 Roma RM
+    - Via della Libertà, 12 - 35123 Padova PD
+    - Corso Sempione, 123 - 20154 Milano MI
+    - Via Enrico Fermi, 25 - 00147 Roma RM
+    - Via Cavour, 16 - 00184 Roma RM
+    - Corso Europa, 5 - 00198 Roma RM
+    - Abruzzi
+    - Atri
+    - Avezzano
+    - Chieti
+    - Lanciano
+    - Aquila
+    - Ortona
+    - Pescara
+    - Sulmona
+    - Teramo
+    - Vasto
+    - Basilicata
+    - Matera
+    - Melfi
+    - Potenza
+    - Venosa
+    - Calabria
+    - Catanzaro
+    - Cosenza
+    - Crotone
+    - Reggio di Calabria
+    - Vibo Valentia
+    - Campania
+    - Amalfi
+    - Ariano Irpino
+    - Avellino
+    - Aversa
+    - Benevento
+    - Capua
+    - Caserta
+    - Castellammare di Stabia
+    - Cava de Tirreni
+    - Eboli
+    - Ercolano
+    - Forio
+    - Naples
+    - Nocera Inferiore
+    - Nola
+    - Pomigliano d’Arco
+    - Portici
+    - Pozzuoli
+    - Salerno
+    - Sarno
+    - Sessa Aurunca
+    - Sorrento
+    - Torre Annunziata
+    - Torre del Greco
+    - Emilia-Romagna
+    - Argenta
+    - Bobbio
+    - Bologna
+    - Carpi
+    - Cento
+    - Cesena
+    - Faenza
+    - Ferrara
+    - Fidenza
+    - Forlì
+    - Guastalla
+    - Imola
+    - Lugo
+    - Mirandola
+    - Modena
+    - Piacenza
+    - Ravenna
+    - Reggio nell’Emilia
+    - Rimini
+    - Friuli–Venezia Giulia
+    - Aquileia
+    - Cividale del Friuli
+    - Gorizia
+    - Monfalcone
+    - Trieste
+    - Udine
+    - Lazio
+    - Alatri
+    - Anagni
+    - Anzio
+    - Aquino
+    - Ardea
+    - Arpino
+    - Bolsena
+    - Cassino
+    - Castel Gandolfo
+    - Civita Castellana
+    - Civitavecchia
+    - Cori
+    - Ferentino
+    - Fondi
+    - Formia
+    - Frascati
+    - Frosinone
+    - Gaeta
+    - Latina
+    - Marino
+    - Rieti
+    - Rome
+    - Sora
+    - Subiaco
+    - Tarquinia
+    - Terracina
+    - Tivoli
+    - Tuscania
+    - Viterbo
+    - Liguria
+    - Bordighera
+    - Chiavari
+    - Genoa
+    - Imperia
+    - La Spezia
+    - Portofino
+    - Rapallo
+    - San Remo
+    - Sarzana
+    - Savona
+    - Ventimiglia
+    - Lombardy
+    - Belgioioso
+    - Bergamo
+    - Brescia
+    - Busto Arsizio
+    - Cantù
+    - Como
+    - Crema
+    - Cremona
+    - Desio
+    - Gorgonzola
+    - Lecco
+    - Legnano
+    - Lodi
+    - Magenta
+    - Mantua
+    - Milan
+    - Monza
+    - Pavia
+    - Sesto San Giovanni
+    - Sondrio
+    - Varese
+    - Vigevano
+    - Voghera
+    - Marche
+    - Ancona
+    - Ascoli Piceno
+    - Civitanova Marche
+    - Fabriano
+    - Fano
+    - Fermo
+    - Jesi
+    - Loreto
+    - Macerata
+    - Roma
+    - Bolzano
+    - Milano

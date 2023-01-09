@@ -1,0 +1,98 @@
+[
+  {
+    "text": "pepperoni",
+    "intent": "item_start_generic",
+    "intent_prediction": {
+      "name": "item_topping",
+      "confidence": 0.6337104439735413
+    }
+  },
+  {
+    "text": "small",
+    "intent": "item_size",
+    "intent_prediction": {
+      "name": "init_request",
+      "confidence": 0.375139445066452
+    }
+  },
+  {
+    "text": "large",
+    "intent": "item_size",
+    "intent_prediction": {
+      "name": "item_start_generic",
+      "confidence": 0.6910160779953003
+    }
+  },
+  {
+    "text": "small",
+    "intent": "item_start_generic",
+    "intent_prediction": {
+      "name": "init_request",
+      "confidence": 0.375139445066452
+    }
+  },
+  {
+    "text": "medium",
+    "intent": "item_start_generic",
+    "intent_prediction": {
+      "name": "item_size",
+      "confidence": 0.5388737916946411
+    }
+  },
+  {
+    "text": "my name is Raymond",
+    "intent": "client_name",
+    "intent_prediction": {
+      "name": "give_name",
+      "confidence": 0.5548723340034485
+    }
+  },
+  {
+    "text": "do you have hawaii",
+    "intent": "item_type_start_positive",
+    "intent_prediction": {
+      "name": "pizza_questions",
+      "confidence": 0.576492965221405
+    }
+  },
+  {
+    "text": "do you offer pizza margherita",
+    "intent": "item_type_start_positive",
+    "intent_prediction": {
+      "name": "pizza_questions",
+      "confidence": 0.5439936518669128
+    }
+  },
+  {
+    "text": "hawaii",
+    "intent": "item_type",
+    "intent_prediction": {
+      "name": "item_start_generic",
+      "confidence": 0.704683244228363
+    }
+  },
+  {
+    "text": "2",
+    "intent": "item_amount",
+    "intent_prediction": {
+      "name": "item_start_generic",
+      "confidence": 0.554433286190033
+    }
+  },
+  {
+    "text": "098765432",
+    "intent": "give_phone",
+    "intent_prediction": {
+      "name": "phone_number",
+      "confidence": 0.9637580513954163
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "accept_feedback",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.8203851580619812
+    }
+  }
+]

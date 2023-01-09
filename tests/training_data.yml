@@ -1,0 +1,769 @@
+version: "3.1"
+nlu:
+- intent: item_type_start_negative
+  examples: |
+    - do you offer pizza [Americana](pizza_type)
+- intent: item_type_start_positive
+  examples: |
+    - do you have [hawaii](pizza_type)
+- intent: item_type
+  examples: |
+    - [hawaii](pizza_type)
+- intent: give_phone
+  examples: |
+    - [098765432](phone_number)
+- intent: pizza_questions
+  examples: |
+    - do you offer pizza [margherita](pizza_type)
+- intent: item_amount
+  examples: |
+    - [2](pizza_amount)
+    - [1](pizza_amount)
+- intent: order_delivery
+  examples: |
+    - delivery
+    - delivery please
+- intent: order_take_home
+  examples: |
+    - take away
+    - take away please
+- intent: item_change_request_without_entity
+  examples: |
+    - Actually i want to modify pizza size.
+    - i want to change my order.
+- intent: give_rating
+  examples: |
+    - [satisfied](rating)
+    - [very unsatisfied](rating)
+    - [0](rating)
+    - [very satisfied](rating)
+- intent: client_name
+  examples: |
+    - my name is [Raymond](client_name)
+    - [Raymond](client_name)
+    - I'm [jack](client_name)
+    - yes sure my name is [frank](client_name)
+- intent: response_negative
+  examples: |
+    - non
+    - no thank you
+    - nah
+    - actually no
+    - Nope
+    - nope
+    - Noo
+    - No, I want to make a change
+- intent: give_name
+  examples: |
+    - [jihed](client_name)
+    - [giuliano](client_name)
+    - [ghaith](client_name)
+    - my name is [Raymond](client_name)
+    - my name is [josh](client_name)
+    - [mahed](client_name)
+    - my name is [sam](client_name)
+    - my phone is [55](phone_number)
+- intent: out_of_scope
+  examples: |
+    - Who's the US President?
+    - do you have shoes
+    - do you have a sister
+    - book a flight from milan to ny
+    - what is your name
+    - What is 2 + 2?
+    - how far is the square
+    - are you real
+- intent: phone_number
+  examples: |
+    - [098765432](phone_number)
+    - [12345678](phone_number)
+    - [3895647821](phone_number)
+    - [12345698](phone_number)
+    - [8395657421](phone_number)
+    - [123654785](phone_number)
+    - number is [098765432](phone_number)
+    - my number is [098765432](phone_number)
+    - [+21694252698](phone_number)
+- intent: goodbye
+  examples: |
+    - thank you jaljoul
+    - thank you
+    - ciao
+    - goodbye
+    - thanks fra
+    - thanks
+    - see ya
+    - bye
+    - bye bye
+- intent: item_size
+  examples: |
+    - [small](pizza_size)
+    - I want a [large](pizza_size) pizza
+    - Little pizza
+    - [large](pizza_size)
+    - huge pizza
+    - [medium](pizza_size) pizza
+    - I want to order [large](pizza_size) pizza
+    - [medium](pizza_size)
+- intent: accept_feedback
+  examples: |
+    - start
+    - ok no problem
+    - yes no problem
+    - yes why not
+    - begin
+    - ok
+    - let's go
+    - yes
+- intent: item_topping
+  examples: |
+    - I want to order pizza with OLIVES
+    - favorite topping is Corns
+    - I love cheese
+    - Pepperoni is my favorite topping
+    - Corn
+    - Definitely onnion
+    - Olive
+    - My favourite topping is cheese
+    - I like olive
+    - Onions
+    - I love tomatoes
+- intent: item_change
+  examples: |
+    - actually, i would like a [small](pizza_size) [vegetarian](pizza_type).
+    - I want to change the pizza
+    - can i get a [vegetarian](pizza_type) instead?
+    - I'd like in [medium](pizza_size) size instead
+    - wait, can i get  it in [large](pizza_size).
+    - I want to change the size to [medium](pizza_size)
+    - I'd like a  [margherita](pizza_type) pizza instead.
+    - I'd like in [small](pizza_size) instead.
+    - actually , can I get [margherita](pizza_type)?
+    - I want to change the size to [large](pizza_size)
+    - I want [funghi](pizza_type)
+    - actually , i 'd like [small](pizza_size) pizza.
+- intent: welcome_greet
+  examples: |
+    - hello hi
+    - Hi
+    - just going to say hi
+    - bonjour
+    - hey
+    - hello
+    - Hi there
+    - hey there
+    - buon giorno
+    - Howdy
+    - greetings
+    - howdy
+    - Hey
+    - salut
+- intent: response_positive
+  examples: |
+    - i do
+    - Yeah
+    - all good
+    - that's right
+    - yes
+    - perfect
+    - that's all
+    - i confirm
+    - yeah all is good
+    - correct
+    - yeah
+    - yep
+    - ye
+    - Yes
+    - yes i do
+    - yes, that is right
+- intent: give_feedback
+  examples: |
+    - [i don't like it](feedback)
+    - [average](feedback)
+    - [it sucks](feedback)
+    - [stupid](feedback)
+    - [i really love it](feedback)
+    - [it's really useless](feedback)
+    - [I was disappointed with my experience. The food was cold and the service was slow](feedback)
+    - [i dont like it](feedback)
+    - [i hate it](feedback)
+    - [helpfull](feedback)
+    - [meh](feedback)
+    - [could be better](feedback)
+    - [needs more work](feedback)
+    - [The service was slow and the food was just average The pizza was burnt and the delivery took forever. I won't be ordering from here again](feedback)
+    - [it's bad](feedback)
+    - [good](feedback)
+    - [I would not recommend](feedback)
+    - [The service was okay, but the food was just average](feedback)
+    - [I had a great time at your restaurant. The ambiance was great and the staff was very friendly](feedback)
+- intent: order_delivery_address
+  examples: |
+    - my  address is [via della malpensada 140, trento](delivery_address)
+    - my address is [No 46  655 avenue du techno pole street](delivery_address)
+    - [house num 46  655 avenue du techno pole street](delivery_address)
+    - i live in [bolzano](delivery_address)
+    - my address is [#46, 655 avenue du techno pole](delivery_address)
+    - my address is [san bartolomeo](delivery_address)
+    - my address is [house number 46 street 655 avenue du techno pole](delivery_address)
+    - i live in [verona](delivery_address)
+    - my address is [house num 46  655 avenue du techno pole street](delivery_address)
+    - my address is [via della malpensada 140 trento](delivery_address)
+    - my address is [No. 46  655 avenue du techno pole street](delivery_address)
+    - i live in [milan central 123](delivery_address)
+    - [bolzano](delivery_address)
+    - address is [via della malpensada 140 trento](delivery_address)
+    - i live in [san bartolomeo trento](delivery_address)
+    - [#46, 655 avenue du techno pole](delivery_address)
+    - [house number 46 street 655 avenue du technopole](delivery_address)
+    - [verona san guiseppe](delivery_address)
+    - [house num 46 655 avenue du techno pole street](delivery_address)
+    - [House No 46  655 avenue du techno pole street](delivery_address)
+- intent: init_request
+  examples: |
+    - want to oder large cheese pizza
+    - My favorite pizza is Small corn
+    - Pizza
+    - medium and Olives
+    - I want a medium cheese pizza
+    - large corns
+    - I like small olives pizza
+    - want large pepper pizza
+    - I want large tomatoes pizza
+    - pizza will do
+    - I want to order large pizza with olives
+    - [small](pizza_size)
+    - I want pizza
+    - want to order least carnivore pizza
+    - want to order pizza
+    - pepperoni small pizza
+    - my favorite pizza is small corn
+    - medium with onion
+    - i want a pizza
+    - peperoni, large
+    - want medium onions pizza
+    - need large pepperoni pizza
+    - large onions
+    - I want to order a pizza
+    - Pizza please
+    - pizza
+- intent: init_pizza_question
+  examples: |
+    - do you have pizza with no [meat](toppings)?
+    - do you have pizza without [meat](toppings) please?
+    - any pizza without [vegetables](toppings) please?
+    - do you have pizza with no [cheese](toppings)?
+    - do you have pizza with no [vegetables](toppings) please?
+    - do you have pizza without [vegetables](toppings)?
+    - do you have pizza with no [pepper](toppings)?
+    - pizza without [pepper](toppings)?
+    - pizza without [vegetables](toppings) please?
+    - pizza without [cheese](toppings) please?
+    - pizza with no [vegetables](toppings) please?
+    - any pizza without [meat](toppings) please?
+    - pizza with no [pepper](toppings)?
+    - do you have pizza without [meat](toppings)?
+    - pizza without [meat](toppings) please?
+    - pizza with no [meat](toppings) please?
+    - pizza without [meat](toppings)?
+    - do you have pizza with no [pepper](toppings) please?
+    - any pizza without [cheese](toppings) please?
+    - pizza with no [cheese](toppings) please?
+    - pizza without [vegetables](toppings)?
+    - do you have pizza without [cheese](toppings)?
+    - pizza with no [pepper](toppings) please?
+    - do you have pizza without [pepper](toppings) please?
+    - do you have pizza with no [vegetables](toppings)?
+    - do you have pizza without [cheese](toppings) please?
+    - any pizza with no [vegetables](toppings)?
+    - do you have pizza with no [meat](toppings) please?
+    - pizza without [cheese](toppings)?
+    - pizza with no [cheese](toppings)?
+    - any pizza with no [pepper](toppings)?
+    - do you have pizza with [meat](toppings)
+    - any pizza with no [cheese](toppings)?
+- intent: item_start_generic
+  examples: |
+    - [one](pizza_amount) [Funghi](pizza_type) pizza [small](pizza_size)
+    - [Hawaii](pizza_type) [large](pizza_size) pizza [9](pizza_amount)
+    - I want [four](pizza_amount) [small](pizza_size) pizza [Funghi](pizza_type)
+    - [one](pizza_amount) [Pepperoni](pizza_type) pizza [medium](pizza_size)
+    - i want [2](pizza_amount) [funghi](pizza_type)
+    - [jumbo](pizza_type)
+    - [1](pizza_amount) [small](pizza_size) [white pizza](pizza_type)
+    - [3](pizza_amount) [Vegetarian](pizza_type) pizza [small](pizza_size)
+    - i want [6](pizza_amount) [margharitta](pizza_type) pizza
+    - just [one](pizza_amount)
+    - i want [2](pizza_amount) [pepperoni](pizza_type)
+    - [large](pizza_size)
+    - [1](pizza_amount) [Hawaii](pizza_type) [large](pizza_size) pizza
+    - I want [one](pizza_amount) [Funghi](pizza_type) [small](pizza_size) pizza
+    - [Vegetarian](pizza_type) pizza [small](pizza_size)  [two](pizza_amount)
+    - [4](pizza_amount) [large](pizza_size) pizza [Hawaii](pizza_type)
+    - [small](pizza_size)  [hawaii](pizza_type) pizza
+    - [Hawaii](pizza_type)
+    - [Pepperoni](pizza_type) [medium](pizza_size) pizza  [4](pizza_amount)
+    - I need [hawaii](pizza_type) pizza [small](pizza_size)
+    - [Vegetarian](pizza_type) pizza pizza
+    - [Funghi](pizza_type) pizza
+    - [2](pizza_amount)
+    - [medium](pizza_size)
+    - [Margherita](pizza_type) [medium](pizza_size) pizza [6](pizza_amount)
+    - [large](pizza_size) [funghi](pizza_type) pizza
+    - [Pepperoni](pizza_type) pizza
+    - [four](pizza_amount) [small](pizza_size) pizza [Funghi](pizza_type)
+    - [one](pizza_amount) [Pepperoni](pizza_type) [medium](pizza_size) pizza
+    - [Margherita](pizza_type) pizza [medium](pizza_size)  [6](pizza_amount)
+    - [one](pizza_amount) [Funghi](pizza_type) [small](pizza_size) pizza
+    - [two](pizza_amount) [large](pizza_size) pizza [hawaii](pizza_type)
+    - [Margherita](pizza_type) pizza
+    - [four](pizza_amount) [small](pizza_size) pizza [Vegetarian](pizza_type)
+    - I'd like to order [3](pizza_amount)  [small](pizza_size) [hawaii](pizza_type) please
+    - i'd like [three](pizza_amount) [medium](pizza_size) pizza [margherita](pizza_type)
+    - [hawaii](pizza_type) pizza [small](pizza_size)
+    - [Vegetarian](pizza_type) [small](pizza_size) pizza [two](pizza_amount)
+    - I want [Funghi](pizza_type) [small](pizza_size) pizza [three](pizza_amount)
+    - i want [5](pizza_amount) [Hawaii](pizza_type) pizza
+    - I want [Funghi](pizza_type) pizza
+    - I want [two](pizza_amount) [small](pizza_size) [Funghi](pizza_type) pizza
+    - [pepperoni](pizza_type) and [funghi](pizza_type)
+    - [two](pizza_amount) please
+    - [2](pizza_amount) [large](pizza_size) [Hawaii](pizza_type) pizza
+    - [Pepperoni](pizza_type) pizza [medium](pizza_size)   [4](pizza_amount)
+    - i want [2](pizza_amount) pizza
+    - [Pepperoni](pizza_type)
+    - [Funghi](pizza_type) [small](pizza_size) pizza [three](pizza_amount)
+    - [one](pizza_amount) [Margherita](pizza_type) pizza [medium](pizza_size)
+    - i want [2](pizza_amount) [funghi](pizza_type) [small](pizza_size) pizza
+    - [1](pizza_amount) [Hawaii](pizza_type) pizza [large](pizza_size)
+    - [four](pizza_amount) [medium](pizza_size) pizza [Pepperoni](pizza_type)
+    - [two](pizza_amount)
+    - [two](pizza_amount) [medium](pizza_size) pizza [margherita](pizza_type) please
+    - [hawaii](pizza_type) pizza [small](pizza_size)  please
+    - [2](pizza_amount) please
+    - [Vegetarian](pizza_type)
+    - [two](pizza_amount) [medium](pizza_size) [Margherita](pizza_type) pizza
+    - [four](pizza_amount) [medium](pizza_size) pizza [Margherita](pizza_type)
+    - i want [3](pizza_amount) pizza [funghi](pizza_type)
+    - [funghi](pizza_type)
+    - [3](pizza_amount) [Vegetarian](pizza_type) [small](pizza_size) pizza
+- synonym: via della malpensada 140,trento
+  examples: |
+    - via della malpensada 140 trento
+- synonym: Americana
+  examples: |
+    - Americana
+- synonym: Calzone
+  examples: |
+    - Calzone
+- synonym: Caprese
+  examples: |
+    - Caprese
+- synonym: Crudo
+  examples: |
+    - Crudo
+- synonym: Chicken BBC
+  examples: |
+    - Chicken BBC
+- synonym: Rustica
+  examples: |
+    - Rusticautter_default
+- synonym: 10"
+  examples: |
+    - 10
+    - 10 inch
+    - small
+    - Small
+    - size S
+- synonym: 12"
+  examples: |
+    - 12
+    - 12 inch
+    - Medium
+    - medium
+    - normal
+    - twelve inch
+    - size M
+- synonym: 14"
+  examples: |
+    - 14
+    - 14 inch
+    - large
+    - size L
+- synonym: 18"
+  examples: |
+    - 18
+    - jumbo
+    - XXL
+    - size XXL
+- synonym: Funghi
+  examples: |
+    - Funghi
+- synonym: Hawaii
+  examples: |
+    - Hawaii
+- synonym: Margherita
+  examples: |
+    - Margherita
+    - margherita
+- synonym: Pepperoni
+  examples: |
+    - Pepp
+- synonym: Vegetarian
+  examples: |
+    - Vegetarian
+    - Vegetable
+- lookup: anti_pizza_type
+  examples: |
+    - Americana
+    - Calzone
+    - Caprese
+    - Crudo
+    - Chicken BBC
+- lookup: client_name
+  examples: |
+    - Diana
+    - Matteo
+    - Ludovica
+    - Coluccio
+    - Luciano
+    - Tiziana
+    - Rembrandt
+    - Gelsomina
+    - Piermaria
+    - Federico
+    - Sergius
+    - Federica
+    - Manuel
+    - Letizia
+    - Melania
+    - Allegra
+    - Etta
+    - Lina
+    - Gianna
+    - Stella
+    - Giuseppe
+    - Raffaella
+    - Sante
+    - Arnulfo
+    - Elvira
+    - Piero
+    - Tiziana
+    - Diana
+    - Eliana
+    - Mercedes
+    - Raffaele
+    - Bernardo
+    - Giulietta
+    - Franco
+    - Napoleone
+    - Armando
+    - Arnaldo
+    - Sandro
+    - Pasquale
+    - Vincenza
+    - Eva
+    - Pier
+    - Clelia
+    - Vittoria
+    - Gianfranco
+    - Rosario
+    - Serena
+    - Matteo
+    - Gioele
+    - Alberto
+    - Pina
+    - Salvatore
+    - Giacobbe
+    - Flavio
+    - Damiano
+    - Aria
+    - Cecilia
+    - Panfilo
+    - Carmelo
+    - Luchino
+    - Lando
+    - Liberto
+    - Olga
+    - Severino
+    - Raffaele
+    - Pier
+    - Biagio
+    - Enzio
+    - Luca
+    - Damiano
+    - Ronaldo
+    - Azeglio
+    - Gabriele
+    - Fausto
+    - Liliana
+    - Ninetta
+    - Giosu
+    - Sandro
+    - Etta
+    - Gemma
+    - Carla
+    - Adelmo
+    - Stefano
+    - Angelo
+    - Ippazio
+    - Giuliano
+    - kevin
+    - steve
+    - Emily
+    - Michael
+    - Jessica
+    - Matthew
+    - Sarah
+    - David
+    - John
+    - Taylor
+    - Madison
+    - Benjamin
+    - simone
+    - franco
+- lookup: delivery_address
+  examples: |
+    - Via Giuseppe Verdi, 14 - 20122 Milano MI
+    - Via del Corso, 456 - 00186 Roma RM
+    - Via Napoli, 60 - 80142 Napoli NA
+    - Via Roma, 12 - 16123 Genova GE
+    - Via Vittorio Emanuele II, 123 - 00185 Roma RM
+    - Via della Libertà, 12 - 35123 Padova PD
+    - Corso Sempione, 123 - 20154 Milano MI
+    - Via Enrico Fermi, 25 - 00147 Roma RM
+    - Via Cavour, 16 - 00184 Roma RM
+    - Corso Europa, 5 - 00198 Roma RM
+    - Abruzzi
+    - Atri
+    - Avezzano
+    - Chieti
+    - Lanciano
+    - Aquila
+    - Ortona
+    - Pescara
+    - Sulmona
+    - Teramo
+    - Vasto
+    - Basilicata
+    - Matera
+    - Melfi
+    - Potenza
+    - Venosa
+    - Calabria
+    - Catanzaro
+    - Cosenza
+    - Crotone
+    - Reggio di Calabria
+    - Vibo Valentia
+    - Campania
+    - Amalfi
+    - Ariano Irpino
+    - Avellino
+    - Aversa
+    - Benevento
+    - Capua
+    - Caserta
+    - Castellammare di Stabia
+    - Cava de Tirreni
+    - Eboli
+    - Ercolano
+    - Forio
+    - Naples
+    - Nocera Inferiore
+    - Nola
+    - Pomigliano d’Arco
+    - Portici
+    - Pozzuoli
+    - Salerno
+    - Sarno
+    - Sessa Aurunca
+    - Sorrento
+    - Torre Annunziata
+    - Torre del Greco
+    - Emilia-Romagna
+    - Argenta
+    - Bobbio
+    - Bologna
+    - Carpi
+    - Cento
+    - Cesena
+    - Faenza
+    - Ferrara
+    - Fidenza
+    - Forlì
+    - Guastalla
+    - Imola
+    - Lugo
+    - Mirandola
+    - Modena
+    - Piacenza
+    - Ravenna
+    - Reggio nell’Emilia
+    - Rimini
+    - Friuli–Venezia Giulia
+    - Aquileia
+    - Cividale del Friuli
+    - Gorizia
+    - Monfalcone
+    - Trieste
+    - Udine
+    - Lazio
+    - Alatri
+    - Anagni
+    - Anzio
+    - Aquino
+    - Ardea
+    - Arpino
+    - Bolsena
+    - Cassino
+    - Castel Gandolfo
+    - Civita Castellana
+    - Civitavecchia
+    - Cori
+    - Ferentino
+    - Fondi
+    - Formia
+    - Frascati
+    - Frosinone
+    - Gaeta
+    - Latina
+    - Marino
+    - Rieti
+    - Rome
+    - Sora
+    - Subiaco
+    - Tarquinia
+    - Terracina
+    - Tivoli
+    - Tuscania
+    - Viterbo
+    - Liguria
+    - Bordighera
+    - Chiavari
+    - Genoa
+    - Imperia
+    - La Spezia
+    - Portofino
+    - Rapallo
+    - San Remo
+    - Sarzana
+    - Savona
+    - Ventimiglia
+    - Lombardy
+    - Belgioioso
+    - Bergamo
+    - Brescia
+    - Busto Arsizio
+    - Cantù
+    - Como
+    - Crema
+    - Cremona
+    - Desio
+    - Gorgonzola
+    - Lecco
+    - Legnano
+    - Lodi
+    - Magenta
+    - Mantua
+    - Milan
+    - Monza
+    - Pavia
+    - Sesto San Giovanni
+    - Sondrio
+    - Varese
+    - Vigevano
+    - Voghera
+    - Marche
+    - Ancona
+    - Ascoli Piceno
+    - Civitanova Marche
+    - Fabriano
+    - Fano
+    - Fermo
+    - Jesi
+    - Loreto
+    - Macerata
+- lookup: phone_number
+  examples: |
+    - (918) 555-0114
+    - (517) 555-0117
+    - (281) 555-0122
+    - (678) 555-0141
+    - (212) 555-0158
+    - (415) 555-0163
+    - (919) 555-0183
+    - (864) 555-0195
+    - (319) 555-0197
+    - (631) 555-0221
+    - 564851512
+    - 58975652211
+- lookup: pizza_amount
+  examples: |
+    - 1 pizza
+    - 2 pizza
+    - 3 pizza
+    - 4 pizza
+    - 5 pizza
+    - 6 pizza
+    - 7 pizza
+    - 8 pizza
+    - 9 pizza
+    - 10 pizza
+    - 11 pizza
+    - 12 pizza
+    - 13 pizza
+    - 14 pizza
+    - 15 pizza
+    - 16 pizza
+    - 17 pizza
+    - 18 pizza
+    - 19 pizza
+    - 20 pizza
+- lookup: pizza_size
+  examples: |
+    - small
+    - medium
+    - large
+    - Small
+    - Medium
+    - Large
+    - 10"
+    - 12"
+    - 14"
+    - 18"
+    - smoul
+    - medin
+    - larg
+    - 10.oo
+    - 12
+    - 14
+    - 6
+    - smol
+    - midium
+    - large
+    - 10
+    - twelve
+    - fourteen
+    - 6
+    - samll
+    - meddium
+    - large
+    - 1o
+    - 12
+    - fourteen
+    - 6
+    - Big
+    - little
+- lookup: pizza_type
+  examples: |
+    - Funghi
+    - Hawaii
+    - Margherita
+    - Pepperoni
+    - Vegetarian
+    - Veggie
+    - Meat Lovers
+    - BBQ Chicken
+    - White pizza
+    - Deep dish

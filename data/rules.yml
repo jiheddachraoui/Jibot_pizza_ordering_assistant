@@ -1,0 +1,83 @@
+version: "3.1"
+
+rules:
+- rule: Activate form 1
+  steps:
+  - intent: item_start_generic
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+- rule: submit form 1
+  condition:
+  - active_loop: pizza_order_form
+  steps:
+  - action: pizza_order_form # run the form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_summarize_order
+ 
+- rule: Activate form 2
+  steps:
+ 
+  - intent: response_positive
+  
+  - action: person_form
+  - active_loop: person_form
+- rule: submit form 2
+  condition:
+  - active_loop: person_form
+  steps:
+  - action: person_form # run the form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  
+  - action: action_order_number
+
+  - action: utter_total_order_final
+
+
+- rule: Activate form 3
+  steps:
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+- rule: submit form 3
+  condition:
+  - active_loop: feedback_form
+  steps:
+  - action: feedback_form # run the form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_save_feedback
+  - action: utter_thank_user
+  - action: action_end_conversation
+ 
+
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: greetings
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+
+- rule: start
+  steps:
+    - intent: init_request
+    - action: utter_init_request
+
+
+- rule: exists
+  steps:
+    - intent: item_type_start_negative
+    - action: utter_item_type_start_negative
+
+- rule: dont exists
+  steps:
+    - intent: item_type_start_positive
+    - action: utter_item_type_start_positive

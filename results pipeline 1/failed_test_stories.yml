@@ -1,0 +1,173 @@
+version: "3.1"
+stories:
+- story: interactive_story_4 (data\stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '6'
+    - pizza_type: margharitta
+  - slot_was_set:
+    - pizza_amount: '6'
+  - slot_was_set:
+    - pizza_type: margharitta
+  - slot_was_set:
+    - pizza_amount: '6'
+  - slot_was_set:
+    - pizza_type: margharitta
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '6'
+  - slot_was_set:
+    - pizza_type: margharitta
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: medium
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: jihed
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '547896321'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: san bartolomeo
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: jihed_547896321
+  - action: utter_total_order_final
+  - intent: order_take_home
+  - action: utter_order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: response_negative
+  - action: utter_thank_user
+  - action: action_listen  # predicted: action_end_conversation
+- story: interactive_story_7 (data\stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_start_generic
+    entities:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: pizza_amount
+  - intent: item_type_start_negative
+  - action: utter_item_type_start_negative
+  - action: pizza_order_form
+  - slot_was_set:
+    - requested_slot: pizza_amount
+  - slot_was_set:
+    - pizza_amount: '5'
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: item_change
+    entities:
+    - pizza_amount: '4'
+  - slot_was_set:
+    - pizza_amount: '4'
+  - action: action_change_order  # predicted: action_listen after action_unlikely_intent
+  - action: utter_item_change
+  - intent: response_negative
+  - action: action_reset_pizza_form
+  - action: utter_order_add
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '4'
+    - pizza_size: large
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '4'
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '4'
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '4'
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: riccardi
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '4567845'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: milan
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: riccardi_4567845
+  - action: utter_total_order_final
+  - intent: order_take_home
+  - action: utter_order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+    - requested_slot: rating
+  - slot_was_set:
+    - rating: satisfied
+  - slot_was_set:
+    - requested_slot: feedback
+  - slot_was_set:
+    - feedback: its good but slow
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+  - action: utter_thank_user
+  - action: action_end_conversation

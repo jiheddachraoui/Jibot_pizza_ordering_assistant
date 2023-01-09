@@ -1,0 +1,96 @@
+version: "3.1"
+stories:
+- story: interactive_story_5 (.\tests\test_stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: init_request
+  - action: utter_init_request
+  - intent: init_pizza_question
+    entities:
+    - toppings: meat
+  - slot_was_set:
+    - toppings: meat
+  - slot_was_set:
+    - toppings: meat
+  - action: utter_init_pizza_question  # predicted: action_listen after action_unlikely_intent
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '2'
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '2'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '2'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '2'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_negative
+  - action: utter_order_confirm_negative  # predicted: action_listen after action_unlikely_intent
+  - intent: item_change
+    entities:
+    - pizza_size: medium
+  - slot_was_set:
+    - pizza_size: medium
+  - slot_was_set:
+    - pizza_size: medium
+  - action: action_change_order
+  - action: utter_summarize_order  # predicted: utter_item_change
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: sam
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '8395657421'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: san bartolomeo trento
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: sam_8395657421
+  - action: utter_total_order_final
+  - intent: order_take_home
+  - action: utter_order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+    - requested_slot: feedback
+  - slot_was_set:
+    - feedback: useless
+  - slot_was_set:
+    - requested_slot: rating
+  - slot_was_set:
+    - rating: satisfied
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+  - action: utter_thank_user
+  - action: action_end_conversation

@@ -1,0 +1,119 @@
+version: "3.1"
+stories:
+- story: greeting
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - checkpoint: start_questions_on_pizza
+- story: greeting2
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - checkpoint: start_order
+
+
+- story: questions_on_pizza
+  steps:
+  - checkpoint: start_questions_on_pizza
+  - intent: init_pizza_question
+  - action: utter_init_pizza_question
+  - checkpoint: start_order
+- story: order pizza
+  steps:
+  - checkpoint: start_order
+  - intent: init_request
+  - action: utter_init_request
+  - checkpoint: new_order
+  - intent: item_start_generic
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - checkpoint: confirm_order
+
+
+  
+
+- story: story_to_modify_order_1
+  steps:
+  - checkpoint: confirm_order
+  - intent: item_change
+  - action: action_change_order
+  - action: utter_item_change
+  - checkpoint: confirmed_order_proceed
+
+- story: story_to_modify_order_2
+  steps:
+  - checkpoint: confirm_order
+  - intent: response_negative
+  - action: utter_order_confirm_negative
+  - intent: item_change
+  - action: action_change_order
+  - action: utter_item_change
+  #- action: utter_order_confirm_positive
+  - checkpoint: confirmed_order_proceed
+
+- story: story_to_proceed_furthur
+  steps:
+  - checkpoint: confirm_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - checkpoint: order_proceed
+  - or:
+    - intent: order_take_home
+    - intent: order_delivery
+  - action: utter_order_complete
+  - checkpoint: order_complete
+
+- story: story_to_add_new_order
+  steps:
+  - checkpoint: confirmed_order_proceed
+  - intent: response_negative
+  - action: action_reset_pizza_form
+  - action: utter_order_add
+  - checkpoint: new_order
+
+- story: story_to_proceed_with_confirm_order
+  steps:
+  - checkpoint: confirmed_order_proceed
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - or:
+    - intent: order_take_home
+    - intent: order_delivery
+  - action: utter_order_complete
+  - checkpoint: order_complete
+
+
+
+- story: story_modify_prerequest
+  steps:
+  - intent: item_change_request_without_entity
+  - action: utter_item_type
+  - checkpoint: confirm_order
+
+- story: ask feedback
+  steps:
+  - checkpoint: order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - checkpoint: start_feedback_form
+
+
+- story: refuse feedback
+  steps:
+  
+  - checkpoint: start_feedback_form
+  - intent: response_negative
+  - action: utter_thank_user
+  - action: action_end_conversation
+ 
+- story: accept feedback
+  steps:
+  - checkpoint: start_feedback_form
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form 
+
+
+

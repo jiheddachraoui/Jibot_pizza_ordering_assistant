@@ -1,0 +1,37 @@
+version: "3.1"
+nlu:
+- lookup: pizza_size
+  examples: |
+    - small
+    - medium
+    - large
+    - Small
+    - Medium
+    - Large
+    - 10"
+    - 12"
+    - 14"
+    - 18"
+    - smoul
+    - medin
+    - larg
+    - 10.oo
+    - 12
+    - 14
+    - 6
+    - smol
+    - midium
+    - large
+    - 10
+    - twelve
+    - fourteen
+    - 6
+    - samll
+    - meddium
+    - large
+    - 1o
+    - 12
+    - fourteen
+    - 6
+    - Big 
+    - little

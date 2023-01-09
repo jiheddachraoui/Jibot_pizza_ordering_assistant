@@ -1,0 +1,550 @@
+version: "3.1"
+nlu:
+- intent: item_type_start_negative
+  examples: |
+    - do you have [Americana](pizza_type)
+- intent: item_type_start_positive
+  examples: |
+    - do you offer pizza [margherita](pizza_type)
+- intent: item_type
+  examples: |
+    - [margherita](pizza_type)
+- intent: give_phone
+  examples: |
+    - my phone is [55555555](phone_number)
+- intent: pizza_questions
+  examples: |
+    - do you have [hawaii](pizza_type)
+- intent: item_amount
+  examples: |
+    - [3](pizza_amount)
+- intent: order_delivery
+  examples: |
+    - i prefer delivery
+- intent: order_take_home
+  examples: |
+    - i prefer take away
+- intent: item_change_request_without_entity
+  examples: |
+    - Actually i want to modify pizza type.
+- intent: give_rating
+  examples: |
+    - [unsatisfied](rating)
+- intent: client_name
+  examples: |
+    - my name is [jihed](client_name)
+- intent: response_negative
+  examples: |
+    - no
+- intent: give_name
+  examples: |
+    - [guiseppe](client_name)
+- intent: out_of_scope
+  examples: |
+    - give me the directions to time square
+- intent: phone_number
+  examples: |
+    - [547896321](phone_number)
+- intent: goodbye
+  examples: |
+    - thanks bye
+- intent: item_size
+  examples: |
+    - Probably avg
+    - I think its large
+- intent: accept_feedback
+  examples: |
+    - pleasure
+    - why not
+- intent: item_topping
+  examples: |
+    - cheese
+    - pepperoni
+    - tomatoes
+- intent: item_change
+  examples: |
+    - I changed my mind. Can I get  a [funghi](pizza_type) instead?
+    - I want my pizza in [small](pizza_size) instead
+    - I want [funghi](pizza_type) instead
+- intent: welcome_greet
+  examples: |
+    - hi
+    - yo
+    - hi there
+    - long time no see
+- intent: response_positive
+  examples: |
+    - y
+    - yes i confirm
+    - yes i like it
+- intent: give_feedback
+  examples: |
+    - [The app was easy to use and the delivery was fast. Great job!](feedback)
+    - [I really liked the service. The staff was very helpful and the food was delicious](feedback)
+    - [useless](feedback)
+    - [i like it](feedback)
+    - [I had a great experience](feedback)
+- intent: order_delivery_address
+  examples: |
+    - [san bartolomeo trento](delivery_address)
+    - [trento](delivery_address)
+    - i live at [bolzano 856](delivery_address)
+    - [House No. 46  655 avenue du techno pole street](delivery_address)
+    - my address is [via della malpensada 140, trento](delivery_address)
+- intent: init_request
+  examples: |
+    - cheese and SMALL
+    - pizza please
+    - i want pizza
+    - want to order medium tomatoes pizza
+    - i want to order a pizza
+    - small pizza with tomatoes topping
+    - Pizza will do
+- intent: init_pizza_question
+  examples: |
+    - do you have pizza without [pepper](toppings)?
+    - pizza with no [vegetables](toppings)?
+    - do you have pizza with no [cheese](toppings) please?
+    - pizza without [pepper](toppings) please?
+    - any pizza without [pepper](toppings) please?
+    - pizza with no [meat](toppings)?
+    - any pizza with no [meat](toppings)?
+    - do you have pizza without [vegetables](toppings) please?
+- intent: item_start_generic
+  examples: |
+    - [4](pizza_amount) [small](pizza_size) [Vegetarian](pizza_type) pizza pizza
+    - [one](pizza_amount) [Margherita](pizza_type) [medium](pizza_size) pizza
+    - I want [Funghi](pizza_type) pizza please
+    - [Funghi](pizza_type)
+    - [one](pizza_amount) pizza [funghi](pizza_type)
+    - [Margherita](pizza_type)
+    - [Hawaii](pizza_type) pizza [large](pizza_size)  [9](pizza_amount)
+    - i want [2](pizza_amount) [pepperoni](pizza_type) [large](pizza_size) pizza
+    - [two](pizza_amount) [small](pizza_size) [Funghi](pizza_type) pizza
+    - [Funghi](pizza_type) pizza [small](pizza_size)  [three](pizza_amount)
+    - [two](pizza_amount) [medium](pizza_size) [Pepperoni](pizza_type) pizza
+    - [large](pizza_size) please
+    - just [1](pizza_amount)
+    - I want [2](pizza_amount) [medium](pizza_size) pizza [hawaii](pizza_type) please
+    - [small](pizza_size)
+    - [Hawaii](pizza_type) pizza
+- synonym: via della malpensada 140,trento
+  examples: |
+    - via della malpensada 140 trento
+- synonym: Americana
+  examples: |
+    - Americana
+- synonym: Calzone
+  examples: |
+    - Calzone
+- synonym: Caprese
+  examples: |
+    - Caprese
+- synonym: Crudo
+  examples: |
+    - Crudo
+- synonym: Chicken BBC
+  examples: |
+    - Chicken BBC
+- synonym: Rustica
+  examples: |
+    - Rusticautter_default
+- synonym: 10"
+  examples: |
+    - 10
+    - 10 inch
+    - small
+    - Small
+    - size S
+- synonym: 12"
+  examples: |
+    - 12
+    - 12 inch
+    - Medium
+    - medium
+    - normal
+    - twelve inch
+    - size M
+- synonym: 14"
+  examples: |
+    - 14
+    - 14 inch
+    - large
+    - size L
+- synonym: 18"
+  examples: |
+    - 18
+    - jumbo
+    - XXL
+    - size XXL
+- synonym: Funghi
+  examples: |
+    - Funghi
+- synonym: Hawaii
+  examples: |
+    - Hawaii
+- synonym: Margherita
+  examples: |
+    - Margherita
+    - margherita
+- synonym: Pepperoni
+  examples: |
+    - Pepp
+- synonym: Vegetarian
+  examples: |
+    - Vegetarian
+    - Vegetable
+- lookup: anti_pizza_type
+  examples: |
+    - Americana
+    - Calzone
+    - Caprese
+    - Crudo
+    - Chicken BBC
+- lookup: client_name
+  examples: |
+    - Diana
+    - Matteo
+    - Ludovica
+    - Coluccio
+    - Luciano
+    - Tiziana
+    - Rembrandt
+    - Gelsomina
+    - Piermaria
+    - Federico
+    - Sergius
+    - Federica
+    - Manuel
+    - Letizia
+    - Melania
+    - Allegra
+    - Etta
+    - Lina
+    - Gianna
+    - Stella
+    - Giuseppe
+    - Raffaella
+    - Sante
+    - Arnulfo
+    - Elvira
+    - Piero
+    - Tiziana
+    - Diana
+    - Eliana
+    - Mercedes
+    - Raffaele
+    - Bernardo
+    - Giulietta
+    - Franco
+    - Napoleone
+    - Armando
+    - Arnaldo
+    - Sandro
+    - Pasquale
+    - Vincenza
+    - Eva
+    - Pier
+    - Clelia
+    - Vittoria
+    - Gianfranco
+    - Rosario
+    - Serena
+    - Matteo
+    - Gioele
+    - Alberto
+    - Pina
+    - Salvatore
+    - Giacobbe
+    - Flavio
+    - Damiano
+    - Aria
+    - Cecilia
+    - Panfilo
+    - Carmelo
+    - Luchino
+    - Lando
+    - Liberto
+    - Olga
+    - Severino
+    - Raffaele
+    - Pier
+    - Biagio
+    - Enzio
+    - Luca
+    - Damiano
+    - Ronaldo
+    - Azeglio
+    - Gabriele
+    - Fausto
+    - Liliana
+    - Ninetta
+    - Giosu
+    - Sandro
+    - Etta
+    - Gemma
+    - Carla
+    - Adelmo
+    - Stefano
+    - Angelo
+    - Ippazio
+    - Giuliano
+    - kevin
+    - steve
+    - Emily
+    - Michael
+    - Jessica
+    - Matthew
+    - Sarah
+    - David
+    - John
+    - Taylor
+    - Madison
+    - Benjamin
+    - simone
+    - franco
+- lookup: delivery_address
+  examples: |
+    - Via Giuseppe Verdi, 14 - 20122 Milano MI
+    - Via del Corso, 456 - 00186 Roma RM
+    - Via Napoli, 60 - 80142 Napoli NA
+    - Via Roma, 12 - 16123 Genova GE
+    - Via Vittorio Emanuele II, 123 - 00185 Roma RM
+    - Via della Libertà, 12 - 35123 Padova PD
+    - Corso Sempione, 123 - 20154 Milano MI
+    - Via Enrico Fermi, 25 - 00147 Roma RM
+    - Via Cavour, 16 - 00184 Roma RM
+    - Corso Europa, 5 - 00198 Roma RM
+    - Abruzzi
+    - Atri
+    - Avezzano
+    - Chieti
+    - Lanciano
+    - Aquila
+    - Ortona
+    - Pescara
+    - Sulmona
+    - Teramo
+    - Vasto
+    - Basilicata
+    - Matera
+    - Melfi
+    - Potenza
+    - Venosa
+    - Calabria
+    - Catanzaro
+    - Cosenza
+    - Crotone
+    - Reggio di Calabria
+    - Vibo Valentia
+    - Campania
+    - Amalfi
+    - Ariano Irpino
+    - Avellino
+    - Aversa
+    - Benevento
+    - Capua
+    - Caserta
+    - Castellammare di Stabia
+    - Cava de Tirreni
+    - Eboli
+    - Ercolano
+    - Forio
+    - Naples
+    - Nocera Inferiore
+    - Nola
+    - Pomigliano d’Arco
+    - Portici
+    - Pozzuoli
+    - Salerno
+    - Sarno
+    - Sessa Aurunca
+    - Sorrento
+    - Torre Annunziata
+    - Torre del Greco
+    - Emilia-Romagna
+    - Argenta
+    - Bobbio
+    - Bologna
+    - Carpi
+    - Cento
+    - Cesena
+    - Faenza
+    - Ferrara
+    - Fidenza
+    - Forlì
+    - Guastalla
+    - Imola
+    - Lugo
+    - Mirandola
+    - Modena
+    - Piacenza
+    - Ravenna
+    - Reggio nell’Emilia
+    - Rimini
+    - Friuli–Venezia Giulia
+    - Aquileia
+    - Cividale del Friuli
+    - Gorizia
+    - Monfalcone
+    - Trieste
+    - Udine
+    - Lazio
+    - Alatri
+    - Anagni
+    - Anzio
+    - Aquino
+    - Ardea
+    - Arpino
+    - Bolsena
+    - Cassino
+    - Castel Gandolfo
+    - Civita Castellana
+    - Civitavecchia
+    - Cori
+    - Ferentino
+    - Fondi
+    - Formia
+    - Frascati
+    - Frosinone
+    - Gaeta
+    - Latina
+    - Marino
+    - Rieti
+    - Rome
+    - Sora
+    - Subiaco
+    - Tarquinia
+    - Terracina
+    - Tivoli
+    - Tuscania
+    - Viterbo
+    - Liguria
+    - Bordighera
+    - Chiavari
+    - Genoa
+    - Imperia
+    - La Spezia
+    - Portofino
+    - Rapallo
+    - San Remo
+    - Sarzana
+    - Savona
+    - Ventimiglia
+    - Lombardy
+    - Belgioioso
+    - Bergamo
+    - Brescia
+    - Busto Arsizio
+    - Cantù
+    - Como
+    - Crema
+    - Cremona
+    - Desio
+    - Gorgonzola
+    - Lecco
+    - Legnano
+    - Lodi
+    - Magenta
+    - Mantua
+    - Milan
+    - Monza
+    - Pavia
+    - Sesto San Giovanni
+    - Sondrio
+    - Varese
+    - Vigevano
+    - Voghera
+    - Marche
+    - Ancona
+    - Ascoli Piceno
+    - Civitanova Marche
+    - Fabriano
+    - Fano
+    - Fermo
+    - Jesi
+    - Loreto
+    - Macerata
+- lookup: phone_number
+  examples: |
+    - (918) 555-0114
+    - (517) 555-0117
+    - (281) 555-0122
+    - (678) 555-0141
+    - (212) 555-0158
+    - (415) 555-0163
+    - (919) 555-0183
+    - (864) 555-0195
+    - (319) 555-0197
+    - (631) 555-0221
+    - 564851512
+    - 58975652211
+- lookup: pizza_amount
+  examples: |
+    - 1 pizza
+    - 2 pizza
+    - 3 pizza
+    - 4 pizza
+    - 5 pizza
+    - 6 pizza
+    - 7 pizza
+    - 8 pizza
+    - 9 pizza
+    - 10 pizza
+    - 11 pizza
+    - 12 pizza
+    - 13 pizza
+    - 14 pizza
+    - 15 pizza
+    - 16 pizza
+    - 17 pizza
+    - 18 pizza
+    - 19 pizza
+    - 20 pizza
+- lookup: pizza_size
+  examples: |
+    - small
+    - medium
+    - large
+    - Small
+    - Medium
+    - Large
+    - 10"
+    - 12"
+    - 14"
+    - 18"
+    - smoul
+    - medin
+    - larg
+    - 10.oo
+    - 12
+    - 14
+    - 6
+    - smol
+    - midium
+    - large
+    - 10
+    - twelve
+    - fourteen
+    - 6
+    - samll
+    - meddium
+    - large
+    - 1o
+    - 12
+    - fourteen
+    - 6
+    - Big
+    - little
+- lookup: pizza_type
+  examples: |
+    - Funghi
+    - Hawaii
+    - Margherita
+    - Pepperoni
+    - Vegetarian
+    - Veggie
+    - Meat Lovers
+    - BBQ Chicken
+    - White pizza
+    - Deep dish

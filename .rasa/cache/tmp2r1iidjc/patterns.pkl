@@ -1,0 +1,30 @@
+[
+  {
+    "name": "anti_pizza_type",
+    "pattern": "(\\bAmericana\\b|\\bCalzone\\b|\\bCaprese\\b|\\bCrudo\\b|\\bChicken\\ BBC\\b)"
+  },
+  {
+    "name": "client_name",
+    "pattern": "(\\bDiana\\b|\\bMatteo\\b|\\bLudovica\\b|\\bColuccio\\b|\\bLuciano\\b|\\bTiziana\\b|\\bRembrandt\\b|\\bGelsomina\\b|\\bPiermaria\\b|\\bFederico\\b|\\bSergius\\b|\\bFederica\\b|\\bManuel\\b|\\bLetizia\\b|\\bMelania\\b|\\bAllegra\\b|\\bEtta\\b|\\bLina\\b|\\bGianna\\b|\\bStella\\b|\\bGiuseppe\\b|\\bRaffaella\\b|\\bSante\\b|\\bArnulfo\\b|\\bElvira\\b|\\bPiero\\b|\\bTiziana\\b|\\bDiana\\b|\\bEliana\\b|\\bMercedes\\b|\\bRaffaele\\b|\\bBernardo\\b|\\bGiulietta\\b|\\bFranco\\b|\\bNapoleone\\b|\\bArmando\\b|\\bArnaldo\\b|\\bSandro\\b|\\bPasquale\\b|\\bVincenza\\b|\\bEva\\b|\\bPier\\b|\\bClelia\\b|\\bVittoria\\b|\\bGianfranco\\b|\\bRosario\\b|\\bSerena\\b|\\bMatteo\\b|\\bGioele\\b|\\bAlberto\\b|\\bPina\\b|\\bSalvatore\\b|\\bGiacobbe\\b|\\bFlavio\\b|\\bDamiano\\b|\\bAria\\b|\\bCecilia\\b|\\bPanfilo\\b|\\bCarmelo\\b|\\bLuchino\\b|\\bLando\\b|\\bLiberto\\b|\\bOlga\\b|\\bSeverino\\b|\\bRaffaele\\b|\\bPier\\b|\\bBiagio\\b|\\bEnzio\\b|\\bLuca\\b|\\bDamiano\\b|\\bRonaldo\\b|\\bAzeglio\\b|\\bGabriele\\b|\\bFausto\\b|\\bLiliana\\b|\\bNinetta\\b|\\bGiosu\\b|\\bSandro\\b|\\bEtta\\b|\\bGemma\\b|\\bCarla\\b|\\bAdelmo\\b|\\bStefano\\b|\\bAngelo\\b|\\bIppazio\\b|\\bGiuliano\\b|\\bkevin\\b|\\bsteve\\b|\\bEmily\\b|\\bMichael\\b|\\bJessica\\b|\\bMatthew\\b|\\bSarah\\b|\\bDavid\\b|\\bJohn\\b|\\bTaylor\\b|\\bMadison\\b|\\bBenjamin\\b|\\bsimone\\b)"
+  },
+  {
+    "name": "delivery_address",
+    "pattern": "(\\bVia\\ Giuseppe\\ Verdi,\\ 14\\ \\-\\ 20122\\ Milano\\ MI\\b|\\bVia\\ del\\ Corso,\\ 456\\ \\-\\ 00186\\ Roma\\ RM\\b|\\bVia\\ Napoli,\\ 60\\ \\-\\ 80142\\ Napoli\\ NA\\b|\\bVia\\ Roma,\\ 12\\ \\-\\ 16123\\ Genova\\ GE\\b|\\bVia\\ Vittorio\\ Emanuele\\ II,\\ 123\\ \\-\\ 00185\\ Roma\\ RM\\b|\\bVia\\ della\\ Libertà,\\ 12\\ \\-\\ 35123\\ Padova\\ PD\\b|\\bCorso\\ Sempione,\\ 123\\ \\-\\ 20154\\ Milano\\ MI\\b|\\bVia\\ Enrico\\ Fermi,\\ 25\\ \\-\\ 00147\\ Roma\\ RM\\b|\\bVia\\ Cavour,\\ 16\\ \\-\\ 00184\\ Roma\\ RM\\b|\\bCorso\\ Europa,\\ 5\\ \\-\\ 00198\\ Roma\\ RM\\b)"
+  },
+  {
+    "name": "phone_number",
+    "pattern": "(\\b\\(918\\)\\ 555\\-0114\\b|\\b\\(517\\)\\ 555\\-0117\\b|\\b\\(281\\)\\ 555\\-0122\\b|\\b\\(678\\)\\ 555\\-0141\\b|\\b\\(212\\)\\ 555\\-0158\\b|\\b\\(415\\)\\ 555\\-0163\\b|\\b\\(919\\)\\ 555\\-0183\\b|\\b\\(864\\)\\ 555\\-0195\\b|\\b\\(319\\)\\ 555\\-0197\\b|\\b\\(631\\)\\ 555\\-0221\\b|\\b564851512\\b|\\b58975652211\\b)"
+  },
+  {
+    "name": "pizza_amount",
+    "pattern": "(\\b1\\ pizza\\b|\\b2\\ pizza\\b|\\b3\\ pizza\\b|\\b4\\ pizza\\b|\\b5\\ pizza\\b|\\b6\\ pizza\\b|\\b7\\ pizza\\b|\\b8\\ pizza\\b|\\b9\\ pizza\\b|\\b10\\ pizza\\b|\\b11\\ pizza\\b|\\b12\\ pizza\\b|\\b13\\ pizza\\b|\\b14\\ pizza\\b|\\b15\\ pizza\\b|\\b16\\ pizza\\b|\\b17\\ pizza\\b|\\b18\\ pizza\\b|\\b19\\ pizza\\b|\\b20\\ pizza\\b)"
+  },
+  {
+    "name": "pizza_size",
+    "pattern": "(\\bsmall\\b|\\bmedium\\b|\\blarge\\b|\\bSmall\\b|\\bMedium\\b|\\bLarge\\b|\\b10\"\\b|\\b12\"\\b|\\b14\"\\b|\\b18\"\\b|\\bsmoul\\b|\\bmedin\\b|\\blarg\\b|\\b10\\.oo\\b|\\b12\\b|\\b14\\b|\\b6\\b|\\bsmol\\b|\\bmidium\\b|\\blarge\\b|\\b10\\b|\\btwelve\\b|\\bfourteen\\b|\\b6\\b|\\bsamll\\b|\\bmeddium\\b|\\blarge\\b|\\b1o\\b|\\b12\\b|\\bfourteen\\b|\\b6\\b|\\bBig\\b|\\blittle\\b)"
+  },
+  {
+    "name": "pizza_type",
+    "pattern": "(\\bFunghi\\b|\\bHawaii\\b|\\bMargherita\\b|\\bPepperoni\\b|\\bVegetarian\\b|\\bVeggie\\b|\\bMeat\\ Lovers\\b|\\bBBQ\\ Chicken\\b|\\bWhite\\ pizza\\b|\\bDeep\\ dish\\b)"
+  }
+]

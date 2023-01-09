@@ -1,0 +1,488 @@
+
+version: "3.1"
+stories:
+
+- story: interactive_story_8
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: init_request
+  - action: utter_init_request
+  - intent: init_pizza_question
+    entities:
+    - toppings: meat
+  - slot_was_set:
+    - toppings: meat
+  - action: utter_init_pizza_question
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '7'
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '7'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '7'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_negative
+  - action: utter_order_confirm_negative
+  - intent: item_change
+    entities:
+    - pizza_size: medium
+  - slot_was_set:
+    - pizza_size: medium
+  
+  - action: action_change_order
+  - action: utter_summarize_order
+  
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: jhon
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '777777'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: via verona milano
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: jhon_777777
+  - action: utter_total_order_final
+  - intent: order_take_home
+  - action: utter_order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+    - requested_slot: feedback
+  - slot_was_set:
+    - feedback: useless
+  - slot_was_set:
+    - requested_slot: rating
+  - slot_was_set:
+    - rating: 'unsatisfied'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+  - action: utter_thank_user
+  - action: action_end_conversation
+- story: interactive_story_1
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '3'
+    - pizza_type: margheritta
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_type: margheritta
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_type: margheritta
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_negative
+  - action: utter_order_confirm_negative
+  - intent: item_change
+    entities:
+    - pizza_type: funghi
+  - slot_was_set:
+    - pizza_type: funghi
+  - action: action_change_order
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: franco
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '696969'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: trento
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: franco_696969
+  - action: utter_total_order_final
+  - intent: order_delivery
+  - action: utter_order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+    - requested_slot: rating
+  - slot_was_set:
+    - rating: very satisfied
+  - slot_was_set:
+    - requested_slot: feedback
+  - slot_was_set:
+    - feedback: i like it really helpfull
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+  - action: utter_thank_user
+  - action: action_end_conversation
+
+- story: interactive_story_9
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_type_start_negative
+  - action: utter_item_type_start_negative
+  - intent: pizza_questions
+  - action: utter_init_pizza_question
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '3'
+    - pizza_size: small
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: mahed
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '1523659'
+  - slot_was_set:
+    - requested_slot: delivery_address
+
+- story: interactive_story_10
+  steps:
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '1'
+    - pizza_size: large
+    - pizza_type: funghi
+  - slot_was_set:
+    - pizza_amount: '1'
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - pizza_type: funghi
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '1'
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - pizza_type: funghi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_negative
+  - action: utter_order_confirm_negative
+  - intent: item_change
+    entities:
+    - pizza_amount: '2'
+  - slot_was_set:
+    - pizza_amount: '2'
+  - action: action_change_order
+  - action: utter_summarize_order
+  - intent: response_negative
+  - action: action_reset_pizza_form
+  - slot_was_set:
+    - pizza_type: null
+  - slot_was_set:
+    - pizza_size: null
+  - slot_was_set:
+    - pizza_amount: null
+  - action: utter_order_add
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '2'
+    - pizza_type: vegiterian
+  - slot_was_set:
+    - pizza_amount: '2'
+  - slot_was_set:
+    - pizza_type: vegiterian
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '2'
+  - slot_was_set:
+    - pizza_type: vegiterian
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+
+- story: interactive_story_11
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '3'
+    - pizza_type: funghi
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_type: funghi
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_type: funghi
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: jihed
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '12365478'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: via della malpensada trento
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: jihed_12365478
+  - action: utter_total_order_final
+  - intent: order_delivery
+  - action: utter_order_complete
+  - intent: goodbye
+  - action: utter_feedback
+  - intent: accept_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+    - requested_slot: rating
+  - slot_was_set:
+    - rating: satisfied
+  - slot_was_set:
+    - requested_slot: feedback
+  - slot_was_set:
+    - feedback: i like it
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_feedback
+  - action: utter_thank_user
+  - action: action_end_conversation
+
+#stories:
+
+
+
+- story: interactive_story_12
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '3'
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '3'
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: item_change
+    entities:
+    - pizza_type: funghi
+  - slot_was_set:
+    - pizza_type: funghi
+  - action: action_change_order
+  - action: utter_item_change
+  - intent: response_negative
+  - action: action_reset_pizza_form
+  - slot_was_set:
+    - pizza_type: null
+  - slot_was_set:
+    - pizza_size: null
+  - slot_was_set:
+    - pizza_amount: null
+  - action: utter_order_add
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '1'
+    - pizza_size: small
+    - pizza_type: funghi
+  - slot_was_set:
+    - pizza_amount: '1'
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - pizza_type: funghi
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '1'
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - pizza_type: funghi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name
+  - slot_was_set:
+    - client_name: Alex
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: '8335694217'
+  - slot_was_set:
+    - requested_slot: delivery_address
+  - slot_was_set:
+    - delivery_address: san francesco california
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_order_number
+  - slot_was_set:
+    - order_number: Alex_8335694217
+  - action: utter_total_order_final
+
+- story: interactive_story_1
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: item_start_generic
+    entities:
+    - pizza_amount: '1'
+    - pizza_size: small
+    - pizza_type: funghi
+  - slot_was_set:
+    - pizza_amount: '1'
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - pizza_type: funghi
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_amount: '1'
+  - slot_was_set:
+    - pizza_size: small
+  - slot_was_set:
+    - pizza_type: funghi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_summarize_order
+  - intent: item_change
+    entities:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - action: action_change_order
+  - action: utter_item_change
+  - intent: response_positive
+  - action: person_form
+  - active_loop: person_form
+  - slot_was_set:
+    - requested_slot: client_name

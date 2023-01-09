@@ -1,0 +1,159 @@
+{
+  "action_end_conversation": {
+    "precision": 0.992,
+    "recall": 1.0,
+    "f1-score": 0.9959839357429718,
+    "support": 124
+  },
+  "utter_item_change": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 521
+  },
+  "action_order_number": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "action_save_feedback": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "pizza_order_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 519
+  },
+  "utter_order_complete": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 249
+  },
+  "utter_feedback": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 249
+  },
+  "utter_item_type_start_negative": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "feedback_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 126
+  },
+  "action_reset_pizza_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 377
+  },
+  "utter_total_order_final": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "utter_order_add": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 377
+  },
+  "person_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 249
+  },
+  "utter_init_request": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 136
+  },
+  "utter_order_confirm_negative": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 268
+  },
+  "utter_summarize_order": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "utter_thank_user": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 126
+  },
+  "utter_welcome_greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 141
+  },
+  "utter_item_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 108
+  },
+  "action_change_order": {
+    "precision": 1.0,
+    "recall": 0.9980806142034548,
+    "f1-score": 0.9990393852065321,
+    "support": 521
+  },
+  "utter_init_pizza_question": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 68
+  },
+  "action_listen": {
+    "precision": 0.9996810207336523,
+    "recall": 0.9996810207336523,
+    "f1-score": 0.9996810207336523,
+    "support": 3135
+  },
+  "accuracy": 0.999726514426364,
+  "macro avg": {
+    "precision": 0.9996218645788025,
+    "recall": 0.999898256133505,
+    "f1-score": 0.9997592882583253,
+    "support": 7313
+  },
+  "weighted avg": {
+    "precision": 0.9997276083686585,
+    "recall": 0.999726514426364,
+    "f1-score": 0.9997267233317012,
+    "support": 7313
+  },
+  "micro avg": {
+    "precision": 0.999726514426364,
+    "recall": 0.999726514426364,
+    "f1-score": 0.999726514426364,
+    "support": 7313
+  },
+  "conversation_accuracy": {
+    "accuracy": 0.9919678714859438,
+    "correct": 247,
+    "with_warnings": 0,
+    "total": 249
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "text": "pepperoni",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "pizza_type",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.6535049080848694,
+        "value": "pepperoni",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

@@ -1,0 +1,462 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "entities": [],
+        "intent": "help",
+        "text": "Help"
+      },
+      {
+        "entities": [],
+        "intent": "help",
+        "text": "What stuff would you help us with"
+      },
+      {
+        "entities": [],
+        "intent": "help",
+        "text": "What thing would you be so kind and do?"
+      },
+      {
+        "entities": [],
+        "intent": "help",
+        "text": "What type of stuff can you do?"
+      },
+      {
+        "entities": [],
+        "intent": "help",
+        "text": "can you help me please?"
+      },
+      {
+        "entities": [
+          {
+            "end": 21,
+            "entity": "pizza_size",
+            "start": 16,
+            "value": "large"
+          }
+        ],
+        "intent": "buy",
+        "text": "Can you order a large pizza for me please"
+      },
+      {
+        "entities": [
+          {
+            "end": 27,
+            "entity": "pizza_type",
+            "start": 18,
+            "value": "Pepperoni"
+          }
+        ],
+        "intent": "buy",
+        "text": "Could you order a Pepperoni pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 31,
+            "entity": "pizza_size",
+            "start": 26,
+            "value": "large"
+          },
+          {
+            "end": 43,
+            "entity": "pizza_type",
+            "start": 32,
+            "value": "White pizza"
+          }
+        ],
+        "intent": "buy",
+        "text": "Could you prepare to me a large White pizza pizza for me please"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "I need to buy a pizza"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "I would like to eat a pizza please"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "I would need to eat a pizza please"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "I would want to eat a pizza"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "I'd like to buy a pizza please"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "Would you be so kind and prepare to me a pizza?"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "Would you prepare to me a pizza for me please"
+      },
+      {
+        "entities": [
+          {
+            "end": 21,
+            "entity": "pizza_size",
+            "start": 16,
+            "value": "large"
+          }
+        ],
+        "intent": "buy",
+        "text": "can you order a large pizza for me please?"
+      },
+      {
+        "entities": [
+          {
+            "end": 30,
+            "entity": "pizza_size",
+            "start": 24,
+            "value": "medium"
+          },
+          {
+            "end": 42,
+            "entity": "pizza_type",
+            "start": 31,
+            "value": "Meat Lovers"
+          }
+        ],
+        "intent": "buy",
+        "text": "can you prepare to me a medium Meat Lovers pizza please?"
+      },
+      {
+        "entities": [
+          {
+            "end": 27,
+            "entity": "pizza_type",
+            "start": 18,
+            "value": "Deep dish"
+          }
+        ],
+        "intent": "buy",
+        "text": "could you order a Deep dish pizza for us please"
+      },
+      {
+        "entities": [
+          {
+            "end": 31,
+            "entity": "pizza_size",
+            "start": 26,
+            "value": "large"
+          }
+        ],
+        "intent": "buy",
+        "text": "could you prepare to me a large pizza"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "could you prepare to me a pizza"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "i would like to eat a pizza please"
+      },
+      {
+        "entities": [],
+        "intent": "buy",
+        "text": "i'd need to eat a pizza please"
+      },
+      {
+        "entities": [
+          {
+            "end": 46,
+            "entity": "pizza_size",
+            "start": 41,
+            "value": "large"
+          }
+        ],
+        "intent": "buy",
+        "text": "would you be so kind and prepare to me a large pizza?"
+      },
+      {
+        "entities": [
+          {
+            "end": 24,
+            "entity": "pizza_size",
+            "start": 18,
+            "value": "medium"
+          },
+          {
+            "end": 34,
+            "entity": "pizza_type",
+            "start": 25,
+            "value": "Deep dish"
+          }
+        ],
+        "intent": "buy",
+        "text": "would you order a medium Deep dish pizza please"
+      },
+      {
+        "entities": [
+          {
+            "end": 31,
+            "entity": "pizza_size",
+            "start": 26,
+            "value": "small"
+          }
+        ],
+        "intent": "buy",
+        "text": "would you prepare to me a small pizza for us please?"
+      },
+      {
+        "entities": [
+          {
+            "end": 9,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "13"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "I need 13 pizza ."
+      },
+      {
+        "entities": [
+          {
+            "end": 9,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "14"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "I need 14 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 9,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "19"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "I need 19 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "4"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "I need 4 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "5"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "I need 5 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "11"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "Its a 11 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 7,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "2"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "Its a 2 pizza ."
+      },
+      {
+        "entities": [
+          {
+            "end": 7,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "3"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "Its a 3 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 7,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "4"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "Its a 4 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 7,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "6"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "Its a 6 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "1"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 1 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 9,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "10"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 10 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 9,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "19"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 19 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "2"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 2 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "3"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 3 pizza ."
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "5"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 5 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 7,
+            "value": "6"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "i need 6 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 8,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "12"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "its a 12 pizza"
+      },
+      {
+        "entities": [
+          {
+            "end": 7,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "3"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "its a 3 pizza ."
+      },
+      {
+        "entities": [
+          {
+            "end": 7,
+            "entity": "pizza_ammount",
+            "start": 6,
+            "value": "8"
+          }
+        ],
+        "intent": "number-pizza",
+        "text": "its a 8 pizza"
+      }
+    ],
+    "entity_synonyms": [],
+    "lookup_tables": [],
+    "regex_features": []
+  }
+}

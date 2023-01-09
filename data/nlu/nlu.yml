@@ -1,0 +1,144 @@
+version: "3.1"
+nlu:
+- intent: welcome_greet
+  examples: |
+    - hi
+    - hello
+    - salut
+- intent: init_request
+  examples: |
+    - pizza
+    - i want a pizza
+    - [small](pizza_size)
+    - i want pizza
+    - i want to order a pizza
+- intent: item_start_generic
+  examples: |
+    - [funghi](pizza_type)
+    - [large](pizza_size)
+    - [1](pizza_amount) [small](pizza_size) [white pizza](pizza_type)
+    - i want [2](pizza_amount) [funghi](pizza_type) [small](pizza_size) pizza
+    - i want [2](pizza_amount) pizza
+    - [pepperoni](pizza_type) and [funghi](pizza_type)
+    - [large](pizza_size) [funghi](pizza_type) pizza
+    - i want [5](pizza_amount) [Hawaii](pizza_type) pizza
+    - i want [2](pizza_amount) [pepperoni](pizza_type) [large](pizza_size) pizza
+    - i want [2](pizza_amount) [funghi](pizza_type)
+    - i want [6](pizza_amount) [margharitta](pizza_type) pizza
+    - i want [2](pizza_amount) [pepperoni](pizza_type)
+    - i want [3](pizza_amount) pizza [funghi](pizza_type)
+    - i want [3](pizza_amount) [small](pizza_size) [pepperoni](pizza_type) pizza
+    - i want [1](pizza_amount) [large](pizza_size) [funghi](pizza_type) pizza
+    - i want [2](pizza_amount) pizza [vegiterian](pizza_type)
+    - i want [3](pizza_amount) [funghi](pizza_type) pizza
+    - i want [3](pizza_amount) [pepperoni](pizza_type) pizza
+    - i want [1](pizza_amount) [small](pizza_size) [funghi](pizza_type)
+    - i want [1](pizza_amount) [small](pizza_size) [funghi](pizza_type) pizza
+- intent: item_amount
+  examples: |
+    - [1](pizza_amount)
+- intent: response_positive
+  examples: |
+    - yes
+    - y
+    - yes i confirm
+    - yes i like it
+    - i confirm
+    - yes i do
+    - yes perfect
+- intent: response_negative
+  examples: |
+    - no
+    - no no
+- intent: order_delivery
+  examples: |
+    - delivery
+- intent: item_change
+  examples: |
+    - I want to change the pizza
+    - I'd like in [medium](pizza_size) size instead
+    - i want [2](pizza_amount) pizza instead
+    - i changed my mind i want a [funghi](pizza_type) pizza instead
+    - i want to change it to [pepperoni](pizza_type) pizza
+- intent: order_delivery_address
+  examples: |
+    - my address is [via della malpensada 140 trento](delivery_address)
+    - my address is [via della malpensada 140, trento](delivery_address)
+    - my address is [#46, 655 avenue du techno pole](delivery_address)
+    - my  address is [via della malpensada 140, trento](delivery_address)
+    - address is [via della malpensada 140 trento](delivery_address)
+    - i live in [verona](delivery_address)
+    - i live in [milan central 123](delivery_address)
+    - [trento](delivery_address)
+    - [house num 46 655 avenue du techno pole street](delivery_address)
+    - [bolzano](delivery_address)
+    - my address is [san bartolomeo](delivery_address)
+    - i live in [san bartolomeo trento](delivery_address)
+    - [san bartolomeo trento](delivery_address)
+    - [via della malpensada trento](delivery_address)
+- intent: phone_number
+  examples: |
+    - [12345678](phone_number)
+    - [3895647821](phone_number)
+    - [12345698](phone_number)
+    - [+21694252698](phone_number)
+    - [547896321](phone_number)
+    - [8395657421](phone_number)
+    - [123654785](phone_number)
+    - [1523659](phone_number)
+    - [12365478](phone_number)
+    - [8335694217](phone_number)
+- intent: goodbye
+  examples: |
+    - thank you
+    - bye
+    - thanks
+    - thanks bye
+    - thanks fra
+    - thank you jaljoul
+- intent: item_size
+  examples: |
+    - [medium](pizza_size)
+    - [small](pizza_size)
+    - [large](pizza_size)
+- intent: give_name
+  examples: |
+    - [jihed](client_name)
+    - [giuliano](client_name)
+    - [ghaith](client_name)
+    - my name is [sam](client_name)
+    - [mahed](client_name)
+- intent: accept_feedback
+  examples: |
+    - ok
+    - ok no problem
+    - yes why not
+    - start
+- intent: give_feedback
+  examples: |
+    - [it's really useless](feedback)
+    - [useless](feedback)
+    - [i don't like it](feedback)
+    - [i like it](feedback)
+- intent: give_rating
+  examples: |
+    - [unsatisfied](rating)
+    - [satisfied](rating)
+- intent: order_take_home
+  examples: |
+    - take away
+- intent: init_pizza_question
+  examples: |
+    - do you have pizza with [meat](toppings)
+- intent: item_type_start_negative
+  examples: |
+    - do you have kabeb pizza?
+- intent: pizza_questions
+  examples: |
+    - ok what do you have?
+- intent: client_name
+  examples: |
+    - [franco](client_name)
+- synonym: via della malpensada 140,trento
+  examples: |
+    - via della malpensada 140 trento
