@@ -4,7 +4,6 @@
 
 A conversational assistant to order pizza
 
-This work is the adaptation of giTorto work ([giTorto/HMD-PizzaBot: A conversational assistant to order pizza using Rasa (github.com)](https://github.com/giTorto/HMD-PizzaBot))
 
 i have  :
 
